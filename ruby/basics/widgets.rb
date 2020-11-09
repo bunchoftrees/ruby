@@ -1,6 +1,6 @@
 def ask(question)
     print "#{question} "
-    gets.chomp
+    gets.chomp.to_i
 end
 
 def price(quantity)
@@ -14,10 +14,8 @@ def price(quantity)
     quantity * price_per_unit
 end
 
-
 puts "Welcome to the Widgets Store."
 answer = ask("How many widgets are you ordering?")
-number = answer.to_i
-total = price(number)
+total = price(answer)
 puts "For #{answer} widget(s), your total is $#{total}."
 
