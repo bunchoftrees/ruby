@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 def ask(question)
-    print "#{question} "
-    gets.chomp.to_i
+  print "#{question} "
+  gets.chomp.to_i
 end
 
 def price(quantity)
-    if quantity >= 100
-        price_per_unit = 8
-    elsif quantity >= 50
-        price_per_unit = 9
-    else
-        price_per_unit =10
-    end
-    quantity * price_per_unit
+  price_per_unit = if quantity >= 100
+                     8
+                   elsif quantity >= 50
+                     9
+                   else
+                     10
+                   end
+  quantity * price_per_unit
 end
 
-puts "Welcome to the Widgets Store."
-answer = ask("How many widgets are you ordering?")
+puts 'Welcome to the Widgets Store.'
+answer = ask('How many widgets are you ordering?')
 total = price(answer)
 puts "For #{answer} widget(s), your total is $#{total}."
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def create_list
   print 'What is the list name? '
   name = gets.chomp
