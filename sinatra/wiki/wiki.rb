@@ -2,6 +2,16 @@
 
 require 'sinatra'
 
+def page_content(title)
+  File.read("pages/#{title}.txt")
+rescue Errno::ENOENT
+  nil
+end
+
 get '/' do
-  '<h1>Welcome to our Wiki!</h1>'
+  erb :welcome
+end
+
+get '/:title' do
+  page_content(params[:title])
 end
